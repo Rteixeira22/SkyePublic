@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/static/css/main.98658e07.css",
+    "main.js": "/static/js/main.a87100e7.js",
+    "static/js/453.2fbcf637.chunk.js": "/static/js/453.2fbcf637.chunk.js",
+    "static/media/skye_2.png": "/static/media/skye_2.387df5156baf0b417427.png",
+    "static/media/skye_light_blue.png": "/static/media/skye_light_blue.498c595e87d78a1633a9.png",
+    "static/media/skye_blue.png": "/static/media/skye_blue.69d9b2f82bc62f935ded.png",
+    "static/media/icon_consulta.png": "/static/media/icon_consulta.216046bf21099c25809a.png",
+    "static/media/profile.webp": "/static/media/profile.efadb13dba95b5bc918b.webp",
+    "index.html": "/index.html",
+    "main.98658e07.css.map": "/static/css/main.98658e07.css.map",
+    "main.a87100e7.js.map": "/static/js/main.a87100e7.js.map",
+    "453.2fbcf637.chunk.js.map": "/static/js/453.2fbcf637.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.98658e07.css",
+    "static/js/main.a87100e7.js"
+  ]
+}

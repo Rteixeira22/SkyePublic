@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Unity Game</title>
+  <script src="Build/skye_webl_4.loader.js"></script>
+</head>
+<body>
+  <canvas id="unity-canvas" style="width: 100%; height: 100%;"></canvas>
+  <script>
+    function loadUnityGame() {
+      const canvas = document.querySelector("#unity-canvas");
+      if (!canvas) {
+        return;
+      }
+
+      const config = {
+        dataUrl: "Build/skye_webl_4.data",
+        frameworkUrl: "Build/skye_webl_4.framework.js",
+        codeUrl: "Build/skye_webl_4.wasm",
+        streamingAssetsUrl: "StreamingAssets",
+        companyName: "Skye",
+        productName: "Skye",
+        productVersion: "1.0",
+      };
+
+      let unityInstance = null;
+
+      if (window.createUnityInstance) {
+        window.createUnityInstance(canvas, config, (progress) => {
+        }).then((instance) => {
+          unityInstance = instance;
+        }).catch((message) => {
+          console.error(message);
+        });
+      }
+
+      window.addEventListener('message', function(event) {
+        // Certifique-se de que a mensagem é do iframe que você espera
+        if (event.origin !== window.location.origin) {
+          return;
+        }
+
+        // A pontuação estará na propriedade 'score' do objeto de dados
+        var score = event.data.score;
+        // Aqui você pode enviar a pontuação para o jogo Unity
+        if (unityInstance) {
+          unityInstance.SendMessage('GameManager', 'AtualizarPontos', score);
+        }
+      }, false);
+    }
+
+    loadUnityGame();
+  </script>
+</body>
+</html>
